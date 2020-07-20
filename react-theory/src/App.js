@@ -10,8 +10,6 @@ class App extends Component {
 
         return (
             <div style={divStyle}>
-                <h1 >Hello, world!</h1>
-
                 <Car />
             </div>
         );
