@@ -15,19 +15,31 @@ function App() {
 
     const divStyle = {textAlign: 'center'};
 
-    function handleChangeTitle(name) {
-        setState({
-            ...state,
-            pageTitle: name
-        });
-    }
-
     function handleToggleCars() {
-        console.log(state);
         setState({
             ...state,
             showCars: !state.showCars
         });
+    }
+
+    function handleChangeName(name, index) {
+        const car = state.cars[index];
+        car.name = name;
+        const cars = [...state.cars];
+        cars[index] = car;
+        setState({
+            ...state,
+            cars: cars
+        })
+    }
+
+    function handleDelete(index) {
+        const cars = state.cars;
+        cars.splice(index, 1);
+        setState({
+            ...state,
+            cars: cars
+        })
     }
 
     let carsList = null;
@@ -38,7 +50,8 @@ function App() {
                     key={index}
                     name={car.name}
                     year={car.year}
-                    onChangeTitle={() => handleChangeTitle(car.name)}
+                    onDelete={() => handleDelete(index)}
+                    onChangeName={event => handleChangeName(event.target.value, index)}
                 />
             );
         })
