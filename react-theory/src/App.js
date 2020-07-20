@@ -1,58 +1,56 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './App.css';
-import Car from './Car/Car'
+import Car from './components/Car';
 
-class App extends Component {
-    state = {
+function App() {
+    const [state, setState] = React.useState({
         cars: [
             {name: 'Ford', year: 2018},
             {name: 'Audi', year: 2017},
             {name: 'Mazda', year: 2019}
         ],
-        pageTitle: 'React components'
+        pageTitle: 'React components',
+        showCars: false
+    });
+
+    const divStyle = {textAlign: 'center'};
+
+    function handleChangeTitle(name) {
+        setState({
+            ...state,
+            pageTitle: name
+        });
     }
 
-    changeTitleHandler = (newTitle) => {
-        this.setState({
-            pageTitle:newTitle
+    function handleToggleCars() {
+        console.log(state);
+        setState({
+            ...state,
+            showCars: !state.showCars
+        });
+    }
+
+    let carsList = null;
+    if (state.showCars) {
+        carsList = state.cars.map((car, index) => {
+            return (
+                <Car
+                    key={index}
+                    name={car.name}
+                    year={car.year}
+                    onChangeTitle={() => handleChangeTitle(car.name)}
+                />
+            );
         })
     }
 
-    handleInput = (event) => {
-        this.setState({
-            pageTitle: event.target.value
-        })
-    }
-
-    render () {
-        const divStyle = {
-            textAlign: 'center'
-        }
-
-        return (
-            <div style={divStyle}>
-                <h1>{this.state.pageTitle}</h1>
-
-                <input type="text" onChange={this.handleInput}/>
-
-                <button
-                    onClick={this.changeTitleHandler.bind(this, 'Changed!')}
-                >Change title</button>
-
-                {this.state.cars.map((car, index) => {
-                    return (
-                        <Car
-                            key={index}
-                            name={car.name}
-                            year={car.year}
-                            onChangeTitle={() => this.changeTitleHandler(car.name)}
-                        />
-                    )
-                })}
-
-            </div>
-        );
-    }
+    return (
+        <div style={divStyle}>
+            <h1>{state.pageTitle}</h1>
+            <button onClick={handleToggleCars}>Toggle cars</button>
+            {carsList}
+        </div>
+    );
 }
 
 export default App;
