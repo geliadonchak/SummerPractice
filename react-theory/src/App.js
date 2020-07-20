@@ -10,7 +10,9 @@ class App extends Component {
 
         return (
             <div style={divStyle}>
-                <Car />
+                <Car name={'Ford'} year={2018}/>
+                <Car name="Audi" year={2017}/>
+                <Car name={'Mazda'} year={2019}/>
             </div>
         );
     }
