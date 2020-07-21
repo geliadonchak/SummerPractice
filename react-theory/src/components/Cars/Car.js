@@ -1,9 +1,10 @@
-import React from 'react'
-import './Car.css'
+import React from 'react';
+import Radium from 'radium';
+import './Car.css';
 
 function Car(props) {
-    const inputClasses = ['input']
-    
+    const inputClasses = ['input'];
+
     if (props.name !== '') {
         inputClasses.push('green')
     } else {
@@ -14,8 +15,18 @@ function Car(props) {
         inputClasses.push('bold')
     }
 
+    const style = {
+        border: '1px solid #ccc',
+        boxShadow: '0 4px 5px 0 rgba(0, 0, 0, .14)',
+        ':hover': {
+            border: '1px solid #aaa',
+            boxShadow: '0 4px 15px 0 rgba(0, 0, 0, .15)',
+            cursor: 'pointer'
+        }
+    };
+
     return (
-        <div className="Car">
+        <div className="Car" style={style}>
             <h3>Car name: {props.name}</h3>
             <p>Year: <strong>{props.year}</strong></p>
             <input
@@ -29,4 +40,4 @@ function Car(props) {
     );
 }
 
-export default Car;
+export default Radium(Car);
