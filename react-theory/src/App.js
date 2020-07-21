@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import './App.css';
 import Car from './components/cars/Car';
-import ErrorBoundary from "./components/errorBoundary/ErrorBoundary";
-import Counter from "./components/counter/Counter";
+import ErrorBoundary from './components/errorBoundary/ErrorBoundary';
+import Counter from './components/counter/Counter';
 
 class App extends Component {
     constructor(props) {
@@ -64,6 +64,7 @@ class App extends Component {
                         <Car
                             name={car.name}
                             year={car.year}
+                            index={index}
                             onDelete={() => this.handleDelete(index)}
                             onChangeName={event => this.handleChangeName(event.target.value, index)}
                         />
