@@ -1,77 +1,90 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './App.css';
 import Car from './components/Cars/Car';
 
-function App(props) {
-    const [state, setState] = React.useState({
-        cars: [
-            {name: 'Ford', year: 2018},
-            {name: 'Audi', year: 2017},
-            {name: 'Mazda', year: 2019}
-        ],
-        pageTitle: 'React components',
-        showCars: false
-    });
+class App extends Component {
+    constructor(props) {
+        console.log('App constructor')
+        super(props);
 
-    const divStyle = {textAlign: 'center'};
+        this.state = {
+            cars: [
+                {name: 'Ford', year: 2018},
+                {name: 'Audi', year: 2017},
+                {name: 'Mazda', year: 2019}
+            ],
+            pageTitle: 'React components',
+            showCars: false
+        }
+    }
 
-    function handleToggleCars() {
-        setState({
-            ...state,
-            showCars: !state.showCars
+    handleToggleCars = () => {
+        this.setState({
+            showCars: !this.state.showCars
         });
     }
 
-    function handleChangeName(name, index) {
-        const car = state.cars[index];
+    handleChangeName = (name, index) => {
+        const car = this.state.cars[index];
         car.name = name;
-        const cars = [...state.cars];
+        const cars = this.state.cars;
         cars[index] = car;
-        setState({
-            ...state,
+        this.setState({
             cars: cars
-        })
+        });
     }
 
-    function handleDelete(index) {
-        const cars = state.cars;
+    handleDelete = (index) => {
+        const cars = this.state.cars;
         cars.splice(index, 1);
-        setState({
-            ...state,
+        this.setState({
             cars: cars
-        })
+        });
     }
 
-    let carsList = null;
-    if (state.showCars) {
-        carsList = state.cars.map((car, index) => {
-            return (
-                <Car
-                    key={index}
-                    name={car.name}
-                    year={car.year}
-                    onDelete={() => handleDelete(index)}
-                    onChangeName={event => handleChangeName(event.target.value, index)}
-                />
-            );
-        })
+    componentWillMount() {
+        console.log('componentWillMount');
     }
 
-    return (
-        <div style={divStyle}>
-            {/*<h1>{state.pageTitle}</h1>*/}
-            <h1>{props.title}</h1>
-            <button onClick={handleToggleCars}>Toggle cars</button>
+    componentDidMount() {
+        console.log('componentDidMount');
+    }
 
-            <div style={{
-                width: '400px',
-                margin: 'auto',
-                paddingTop: '20px'
-            }}>
-                {carsList}
+    render() {
+        console.log('App render');
+
+        const divStyle = {textAlign: 'center'};
+
+        let carsList = null;
+        if (this.state.showCars) {
+            carsList = this.state.cars.map((car, index) => {
+                return (
+                    <Car
+                        key={index}
+                        name={car.name}
+                        year={car.year}
+                        onDelete={() => this.handleDelete(index)}
+                        onChangeName={event => this.handleChangeName(event.target.value, index)}
+                    />
+                );
+            })
+        }
+
+        return (
+            <div style={divStyle}>
+                <h1>{this.props.title}</h1>
+                <button onClick={this.handleToggleCars}>Toggle cars</button>
+
+                <div style={{
+                    width: '400px',
+                    margin: 'auto',
+                    paddingTop: '20px'
+                }}>
+                    {carsList}
+                </div>
             </div>
-        </div>
-    );
+        );
+    }
 }
 
 export default App;
