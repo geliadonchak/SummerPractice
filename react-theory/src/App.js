@@ -4,7 +4,7 @@ import Car from './components/Cars/Car';
 
 class App extends Component {
     constructor(props) {
-        console.log('App constructor')
+        console.log('App constructor');
         super(props);
 
         this.state = {
