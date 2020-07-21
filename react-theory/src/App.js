@@ -61,7 +61,14 @@ function App() {
         <div style={divStyle}>
             <h1>{state.pageTitle}</h1>
             <button onClick={handleToggleCars}>Toggle cars</button>
-            {carsList}
+
+            <div style={{
+                width: '400px',
+                margin: 'auto',
+                paddingTop: '20px'
+            }}>
+                {carsList}
+            </div>
         </div>
     );
 }
