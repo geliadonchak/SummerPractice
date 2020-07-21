@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Car from './components/Car';
+import Car from './components/Cars/Car';
 
 function App() {
     const [state, setState] = React.useState({
