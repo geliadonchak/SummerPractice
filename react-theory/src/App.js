@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Car from './components/Cars/Car';
 
-function App() {
+function App(props) {
     const [state, setState] = React.useState({
         cars: [
             {name: 'Ford', year: 2018},
@@ -59,7 +59,8 @@ function App() {
 
     return (
         <div style={divStyle}>
-            <h1>{state.pageTitle}</h1>
+            {/*<h1>{state.pageTitle}</h1>*/}
+            <h1>{props.title}</h1>
             <button onClick={handleToggleCars}>Toggle cars</button>
 
             <div style={{
