@@ -1,6 +1,6 @@
 import React from 'react';
 import Radium from 'radium';
-import './Car.css';
+import './Car.scss';
 
 function Car(props) {
     const inputClasses = ['input'];
@@ -20,7 +20,7 @@ function Car(props) {
         boxShadow: '0 4px 5px 0 rgba(0, 0, 0, .14)',
         ':hover': {
             border: '1px solid #aaa',
-            boxShadow: '0 4px 15px 0 rgba(0, 0, 0, .15)',
+            boxShadow: '0 4px 15px 0 rgba(0, 0, 0, .34)',
             cursor: 'pointer'
         }
     };

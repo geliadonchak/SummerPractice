@@ -1,7 +1,9 @@
+$padding: 10px;
+
 .Car {
     margin-bottom: 10px;
     display: block;
-    padding: 10px;
+    padding: $padding;
     border-radius: 5px;
     transition: border, box-shadow .3s;
 }
