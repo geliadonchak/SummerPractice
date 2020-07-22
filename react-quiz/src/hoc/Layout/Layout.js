@@ -14,12 +14,19 @@ class Layout extends Component {
         });
     }
 
+    handleMenuClose = () => {
+        this.setState({
+            menu: false
+        });
+    }
+
     render() {
         return (
             <div className={classes.Layout}>
 
                 <Drawer
                     isOpen={this.state.menu}
+                    onClose={this.handleMenuClose}
                 />
 
                 <MenuToggle
