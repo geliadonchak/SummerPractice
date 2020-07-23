@@ -1,26 +1,25 @@
-.Auth {
+.QuizCreator {
     display: flex;
     justify-content: center;
-    padding-top: 100px;
+    padding-top: 50px;
     flex-grow: 1;
     width: 100%;
-    background: linear-gradient(270deg, #01fce6 0%, #0096ff 50%, #02e6fa 100%);
+    background: linear-gradient(270deg, #fa8469 0%, #f0613c 50%, #f0993c 100%);
 }
 
-.Auth > div {
+.QuizCreator > div {
     width: 100%;
     max-width: 600px;
     padding: 0 20px;
 }
 
-.Auth h1 {
-    color: #fff;
+.QuizCreator h1 {
     text-align: center;
 }
 
-.AuthForm {
+.QuizCreator form {
     background: #eee;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, .5);
     padding: 15px;
     border-radius: 5px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, .5);
 }

@@ -4,7 +4,7 @@
     padding-top: 100px;
     flex-grow: 1;
     width: 100%;
-    background: linear-gradient(90deg, #ff9269 0%, #f65a70 47%, #f79cd9 100%);
+    background: linear-gradient(90deg, #ff9269 0%, #f65a70 50%, #f79cd9 100%);
 }
 
 .QuizList h1 {
@@ -27,5 +27,5 @@
 }
 
 .QuizList li a:hover {
-    color: #363f54;
+    color: #3f3f4e;
 }
