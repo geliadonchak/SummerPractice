@@ -3,11 +3,10 @@ import './App.scss';
 import {Route, NavLink} from 'react-router-dom';
 import About from './About/About';
 import Cars from './Cars/Cars';
-import Radium from "radium";
+import Radium from 'radium';
 
 class App extends Component {
    render() {
-
        return (
            <div>
                <nav className="nav">
@@ -19,7 +18,7 @@ class App extends Component {
                            <NavLink to="/about" activeStyle={{color: 'blue'}}>About</NavLink>
                        </li>
                        <li>
-                           <NavLink to={{pathname: '/cars', search: '?a=1&b=2', hash: 'wfm-hash'}}>Cars</NavLink>
+                           <NavLink to={{pathname: '/cars'}}>Cars</NavLink>
                        </li>
                    </ul>
                </nav>
