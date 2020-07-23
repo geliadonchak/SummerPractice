@@ -3,31 +3,32 @@ import './App.scss';
 import {Route} from 'react-router-dom';
 import About from './About/About';
 import Cars from './Cars/Cars';
+import Radium from "radium";
 
 class App extends Component {
-  render() {
+   render() {
 
-      return (
-          <div>
-              <nav className="nav">
-                  <ul>
-                      <li>
-                          <a href="/">Home</a>
-                      </li>
-                      <li>
-                          <a href="/about">About</a>
-                      </li>
-                  </ul>
-              </nav>
+       return (
+           <div>
+               <nav className="nav">
+                   <ul>
+                       <li>
+                           <a href="/">Home</a>
+                       </li>
+                       <li>
+                           <a href="/about">About</a>
+                       </li>
+                       <li>
+                           <a href="/cars">Cars</a>
+                       </li>
+                   </ul>
+               </nav>
+               <hr/>
+               <Route path="/" exact render={() => <h1>Home Page</h1>} />
+               <Route path="/about" component={About}/>
+               <Route path="/cars" component={Cars} />
 
-           <hr/>
-
-           <Route path="/" exact render={() => <h1>Home Page</h1>} />
-
-           <About />
-
-           <Cars />
-           </div>
+            </div>
       );
   }
 }
