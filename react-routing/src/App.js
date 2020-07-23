@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './App.scss';
-import {Route, NavLink, Switch} from 'react-router-dom';
+import {Route, NavLink, Switch, Redirect} from 'react-router-dom';
 import About from './About/About';
 import Cars from './Cars/Cars';
 import Radium from 'radium';
@@ -30,6 +30,8 @@ class App extends Component {
                    <Route path="/about" component={About}/>
                    <Route path="/cars" component={Cars} />
                    <Route path="/cars/:name" component={CarDetail} />
+                   <Redirect to={'/'}/>
+                   {/*<Route render={() => <h1 style={{color: 'red', textAlign: 'center'}}>404 not found</h1>}/>*/}
                </Switch>
             </div>
       );
