@@ -24,6 +24,7 @@ const loggerMiddleware = store => next => action => {
 };
 
 const store = createStore(rootReducer, applyMiddleware(loggerMiddleware));
+
 const app = (
     <Provider store={store}>
         <App />
