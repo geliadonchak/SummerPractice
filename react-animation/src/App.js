@@ -4,6 +4,7 @@ import {Transition, CSSTransition} from 'react-transition-group';
 export default function App() {
     const [toggle, setToggle] = useState(true);
     const [toggle2, setToggle2] = useState(true);
+    const removeItem = id => setItems(items.filter(i => i.id !== id));
 
     return (
         <div className="container">
