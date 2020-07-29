@@ -1,8 +1,16 @@
-// const c = 90;
-const c2 = () => 200;
+const createPerson = (name, surname, fieldName, fieldPostfix) => {
+    const fullName = name + ' ' + surname;
 
-const func = (a = 20, b = a + c2()) => {
-    return a + b;
+    return {
+        fullName,
+        name,
+        surname,
+        // getJob() {
+        //     return 'Front End';
+        // },
+        [fieldName + fieldPostfix]: 100
+    };
 };
 
-console.log(func(30));
+const person = createPerson('WFM', 'WFM2', 'car', '-model');
+console.log(person);
