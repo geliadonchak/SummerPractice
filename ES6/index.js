@@ -1,16 +1,17 @@
-const createPerson = (name, surname, fieldName, fieldPostfix) => {
-    const fullName = name + ' ' + surname;
+// let obj = {
+//     name: 'WFM 3',
+//     age: 40
+// };
 
-    return {
-        fullName,
-        name,
-        surname,
-        // getJob() {
-        //     return 'Front End';
-        // },
-        [fieldName + fieldPostfix]: 100
-    };
-};
+// let {name: n, age: a} = obj;
+// console.log(n, a);
 
-const person = createPerson('WFM', 'WFM2', 'car', '-model');
-console.log(person);
+let array = ['WFM', 30];
+
+//let name = array[0];
+//let age = array[1];
+//let color = array[2];
+
+let [, , color='red'] = array;
+
+console.log(color);
