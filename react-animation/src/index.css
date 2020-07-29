@@ -1,15 +1,15 @@
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-        "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-        sans-serif;
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-        monospace;
+    monospace;
 }
 
 .container {
@@ -32,7 +32,20 @@ code {
     justify-content: center;
     width: 200px;
     height: 200px;
+
+}
+
+.square.entering {
     animation: square 1000ms ease-out forwards;
+}
+
+.square.exiting {
+    animation: square 500ms ease-in alternate-reverse;
+}
+
+.square.exited {
+    opacity: 0;
+    transform: translateY(-100px);
 }
 
 .square.blue {
@@ -42,7 +55,6 @@ code {
 .square.orange {
     background: coral;
 }
-
 
 @keyframes square {
     0% {
