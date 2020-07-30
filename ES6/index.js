@@ -1,17 +1,20 @@
-// let obj = {
-//     name: 'WFM 3',
-//     age: 40
-// };
+// function logString(num, str) {
+//     console.log(num, str);
+// }
+// logString(20, 'WFM');
 
-// let {name: n, age: a} = obj;
-// console.log(n, a);
+// function logString(num) {
+//     var args = Array.prototype.slice.call(arguments);
+//     console.log(num, args);
+// }
+// logString(20, 'WFM', 'WFM2', 'WFM3');
 
-let array = ['WFM', 30];
 
-//let name = array[0];
-//let age = array[1];
-//let color = array[2];
-
-let [, , color='red'] = array;
-
-console.log(color);
+function logString(num, ...args) {
+    console.log(num, args);
+}
+// Rest
+logString(20, 'WFM', 'WFM2', 'WFM3', 'WFM4');
+//Spread
+let spreadArray = ['WFM', 'WFM2', 'WFM3', 'WFM4'];
+logString(20, ...spreadArray);
