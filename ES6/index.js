@@ -1,20 +1,18 @@
-// function logString(num, str) {
-//     console.log(num, str);
-// }
-// logString(20, 'WFM');
+let name = 'WFM';
 
-// function logString(num) {
-//     var args = Array.prototype.slice.call(arguments);
-//     console.log(num, args);
-// }
-// logString(20, 'WFM', 'WFM2', 'WFM3');
+// let str = 'Hello ' + name + ', glad to see you!';
+//let str = `Hello ${name}, glad to see you!`;
 
+//let str = 'Hello ' + name + ', glad to \'see\' you!';
+//let str = `Hello '${name}', glad to "see" you! ${5 + 10}`;
 
-function logString(num, ...args) {
-    console.log(num, args);
-}
-// Rest
-logString(20, 'WFM', 'WFM2', 'WFM3', 'WFM4');
-//Spread
-let spreadArray = ['WFM', 'WFM2', 'WFM3', 'WFM4'];
-logString(20, ...spreadArray);
+let html = `
+    <div>
+        <h1>${name}</h1>
+        <span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, tempore.</p>
+        </span>
+    </div>
+`;
+
+console.log(html);
