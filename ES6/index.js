@@ -1,17 +1,28 @@
-let array = [1, 2, 3, 4, 5];
+class Car {
+    constructor(name) {
+        console.log('Car constructor');
+        this.name = name;
+    }
 
-//for (let i = 0; i < array.length; i++) {
-//    console.log(array[i]);
-//}
-
-//array.forEach(function (item) {
-//    console.log(item);
-//});
-
-//for (let item of array) {
-//    console.log('Item: ', item);
-//}
-
-for (let item of 'ABCDEFG') {
-    console.log('Item: ', item);
+    logName() {
+        console.log('Car name is: ', this.name);
+    }
 }
+
+let car = new Car('BMW');
+car.logName();
+
+class BMW extends Car {
+    constructor(name) {
+        super(name);
+
+        console.log('BMW constructor');
+    }
+
+    logName() {
+        super.logName();
+    }
+}
+
+let bmw = new BMW('x6');
+bmw.logName();
