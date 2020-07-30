@@ -1,60 +1,63 @@
-// let sym = Symbol('WFM');
-// console.log(typeof sym);
-// let sym2 = Symbol('1');
-// let sym3 = Symbol('1');
-// console.log(sym2 === sym3);
+// function* gen() {
+//     yield 11;
+//     yield 22;
+//     yield 33;
+// }
+//
+// let iter = gen();
+// console.log(iter.next());
+// console.log(iter.next());
+// console.log(iter.next());
+// console.log(iter.next());
 
-// let s = Symbol('field');
-// let s1 = Symbol('field');
-// let obj = {
-//     [s]: 'WFM'
-// };
-// console.log(obj['field']);
-// console.log(obj[s1]);
-// console.log(obj[s]);
+// function* g1() {
+//     yield 1;
+//     yield* g2();
+//     yield 4;
+// }
+// function* g2() {
+//     yield 2;
+//     yield 3;
+// }
+//
+// let iter = g1();
+// console.log(iter.next());
+// console.log(iter.next());
+// console.log(iter.next());
+// console.log(iter.next());
+// console.log(iter.next());
 
-// let s = Symbol('field');
-// let obj = {
-//     age: 20,
-//     [s]: 'WFM'
-// };
-// console.log(Object.getOwnPropertyNames(obj));
-// console.log(Object.getOwnPropertySymbols(obj));
+// function* g() {
+//     yield* [1, 2, 3];
+// }
+// let iter = g();
+// console.log(iter.next());
+// console.log(iter.next());
+// console.log(iter.next());
+// console.log(iter.next());
 
-// let num = 1;
-// let str = '2';
-// let arr = [1, 2];
-// let obj = {name: 'WFM'};
-// console.log('Number: ', typeof num[Symbol.iterator]);
-// console.log('String: ', typeof str[Symbol.iterator]);
-// console.log('Array: ', typeof arr[Symbol.iterator]);
-// console.log('Object: ', typeof obj[Symbol.iterator]);
-
-// function createIterator(arr) {
-//     let count = 0;
-//     return {
-//         next() {
-//             return count < arr.length
-//                 ? {value: arr[count++], done: false}
-//                 : {value: undefined, done: true}
-//         }
+// function* getRange(start = 0, end = 100, step = 10) {
+//     while (start < end) {
+//         yield start;
+//         start += step;
 //     }
 // }
-// let iter = createIterator([1, 2, 3, 4]);
+// for (let n of getRange(10, 50)) {
+//     console.log(n);
+// }
 
-let fib = {
-    [Symbol.iterator]() {
-        let pre = 0, cur = 1;
-        return {
-            next() {
-                [pre, cur] = [cur, pre + cur];
-                return {value: cur, done: false};
-            }
-        }
-    }
-};
-
-for (let n of fib) {
-    if (n > 1500) break;
-    console.log(n);
-}
+// let fib = {
+//     *[Symbol.iterator]() {
+//         let cur = 1, pre = 0;
+//         for (;;) {
+//             [cur, pre] = [cur + pre, cur];
+//             yield cur;
+//         }
+//     }
+// };
+//
+//
+// for (let n of fib) {
+//     if (n > 3000) break;
+//     console.log(n);
+// }
