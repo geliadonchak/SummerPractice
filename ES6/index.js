@@ -1,18 +1,17 @@
-let name = 'WFM';
+let array = [1, 2, 3, 4, 5];
 
-// let str = 'Hello ' + name + ', glad to see you!';
-//let str = `Hello ${name}, glad to see you!`;
+//for (let i = 0; i < array.length; i++) {
+//    console.log(array[i]);
+//}
 
-//let str = 'Hello ' + name + ', glad to \'see\' you!';
-//let str = `Hello '${name}', glad to "see" you! ${5 + 10}`;
+//array.forEach(function (item) {
+//    console.log(item);
+//});
 
-let html = `
-    <div>
-        <h1>${name}</h1>
-        <span>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, tempore.</p>
-        </span>
-    </div>
-`;
+//for (let item of array) {
+//    console.log('Item: ', item);
+//}
 
-console.log(html);
+for (let item of 'ABCDEFG') {
+    console.log('Item: ', item);
+}
