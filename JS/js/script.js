@@ -1,69 +1,49 @@
-/*var result = 100;
+var arr = [];
 
-function func(param1,param2) {
-	if (param1 == 40) {
-		return;
-	}
+var arr2 = [['world',2,3],1,2,3,4,5,6,7,8,9,10];
 
-	var result = param1 * param2;
-	return result;
-	//alert(result);
+/*var a = 'script';
+var arr3 = [1,2,3,4,5,a,7,8,[1,2,3],10];
+var arr4 = [a+10,a-5];*/
+
+/*var arr3 = new Array();
+var arr4 = new Array(5);
+var arr5 = new Array(1,2,3,4,5,6,7,'test',9,10);*/
+
+var i = 5;
+arr2[5] = 'hello';
+
+arr2[10] = 11;
+arr2[11] = 12;
+
+//arr2[100] = 100;
+
+/*arr2['hello'] = 'world';
+arr2['hello2'] = 'world';
+arr2['hello3'] = 'world';*/
+
+//alert(arr2);
+
+var k = Object.keys(arr2);
+
+/*for (var i = 0; i < arr2.length; i++) {
+	document.write(arr2[i] + '<br />');
+}
+arr2.length = 50
+alert(arr2[0][0]);
+for (var i = 0; i < k.length; i++) {
+	document.write(k[i] + '=>' + arr2[k[i]] + '<br />');
+}*/
+
+var table = new Array(10);
+for (var i = 0; i < table.length; i++) {
+    table[i] = new Array(10);
 }
 
-var a  = 10;
-var b  = 50;
-
-//func(a,a*b);
-//var res = func(a,a+b);
-result = func(a,b);
-
-console.log(result);*/
-
-/*var c = 3;
-
-function func(param1,param2) {
-
-	var result = param1 * param2;
-
-	function func2(a) {
-		return result * param2 * a * c;
-	}
-
-	result = func2(2);
-	return result;
+for (var row = 0; row < table.length; row++) {
+    for (var col = 0; col < table[row].length; col++) {
+        table[row][col] = row*col;
+    }
 }
 
-document.write(func(10,30));*/
-
-/*(function foo(param1,param2) {
-	console.log(param1);
-}   (10,20));*/
-
-
-/*function func(x) {
-	if (x <= 1) {
-		return 1;
-	}
-
-	return  x * func(x-1);
-}
-
-console.log(func(3));//1*2*3*/
-
-/*var f = function fact(x) {
-	if ( x <= 1) {
-		return 1;
-	}
-
-	return  x * fact(x-1);
-};
-
-document.write(f(4));*/
-
-function func() {
-    //var result = param1 * param2;
-    var result = arguments[1] * arguments[3];
-    return result;
-}
-
-alert(func(10,20,63,23,25,34,5467,678));
+alert(table[5][6]);
