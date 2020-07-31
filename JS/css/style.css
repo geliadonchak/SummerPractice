@@ -1,19 +1,19 @@
 body {
-	background-color: #ac6722;
+    background-color: #ac6722;
 }
 
 .wrap {
-	width: 100%;
+    width: 100%;
 }
 
 .karkas {
-	width: 800px;
-	height: 500px;
-	background-color: #e6e6e6;
-	border-radius: 10px;
-	margin:0px auto;
-	text-align: center;
-	padding:30px 10px 0px 10px;
+    width: 800px;
+    height: 500px;
+    background-color: #e6e6e6;
+    border-radius: 10px;
+    margin:0px auto;
+    text-align: center;
+    padding:30px 10px 0px 10px;
 }
 
 ul.lightSlider li {
@@ -25,12 +25,9 @@ ul.lightSlider li {
 }
 
 .myslide {
-	padding:20px;
+    padding:20px;
 }
 
 .lslide img {
-	width:450px;
+    width:450px;
 }
-
-
-
