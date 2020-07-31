@@ -1,66 +1,54 @@
-var arr2 = [10,3,1,2,4,6,2,3,4];
+// var date = new Date(5678);
+// var date = new Date("04 25 2019");
+// var date2 = Date();
+// console.log(date);
+//
+// alert(date.getDate());
+// alert(date.getDay());
+// alert(date.getFullYear());
+// alert(date.getHours());
+// alert(date.getMilliseconds());
+// alert(date.getMinutes());
+// alert(date.getMonth());
+// alert(date.getSeconds());
+// alert(date.getTime());
+// alert(date.getTimezoneOffset());
+//
+// alert(date.setDate(10));
+// alert(date.setFullYear(2014));
+// alert(date.setHours(22));
+// alert(date.setMilliseconds(55));
+// alert(date.setMinutes(45));
+// alert(date.setMonth(11));
+// alert(date.setSeconds(33));
+// alert(date.setTime(456788457));
+//
+// console.log(Date.now);
+// console.log(Date.parse);
+// console.log(Date.toString());
 
-/*if (30 in arr2) {
-	alert('true');
+function displayTime() {
+    var now = new Date();
+    var div = document.getElementById("clock");
+    
+    div.innerHTML = now.toLocaleTimeString();
+
+    setTimeout(displayTime, 1000);
 }
-else {
-	alert('FALSE');
+
+function displayTime2() {
+    var now = new Date();
+    var div = document.getElementById("clock");
+    var sDate = new Date(2021, 11, 31);
+    var timer = sDate.getTime() - now.getTime();
+
+    var days = parseInt(timer / (24 * 60 * 60 * 1000));
+    var hours = parseInt(timer / (60 * 60 * 1000) % 24);
+    var minutes = parseInt(timer / (60 * 1000) % 60);
+    var seconds = parseInt(timer / 1000 % 60);
+
+    div.innerHTML = days + ' : ' + hours + ' : ' + minutes + ' : ' + seconds;
+    setTimeout(displayTime2, 1000);
 }
 
-if (Array.isArray(arr2)) {
-	for (var i =0;;) {
-	}
-}
-
-alert(arr2.join('-'));
-
-arr2.reverse();
-arr2.sort(function(a, b) {
-	console.log(a + '|' + b);
-	return b - a;
-});*/
-
-//var arr_res = arr2.concat([10,56,89]);
-
-var arr_res = arr2.slice(-3);
-
-/*alert(arr2.splice(2,0,5,7,9,10));
-
-arr2.push([10,20,30])
-alert(arr2.pop());
-arr2.unshift([10,20,30]);
-arr2.shift();
-
-delete arr2[0];
-
-arr2.forEach(function(v,i,a) {
-    a[i] = v + 10 + 'hello';
-});
-
-var res = arr2.map(function(x,i,a) {
-	return x * x;
-});
-
-var res = arr2.filter(function(x, i, a) {
-	return x < 3
-});
-
-var res = arr2.some(function(x) {
-	return x < 5;
-});*/
-
-
-var res = arr2.reduce(function(x,y) {
-    return x + y;
-}, 0);
-
-/*reduceRight()
-indexOf()
-lastIndexOf*/
-
-alert(arr2.lastIndexOf(3));
-
-arr2['hello'] = 'world';
-for (var key in arr2) {
-    document.write(key + '=>' + arr2[key] + '<br />');
-}
+window.onload = displayTime2;
