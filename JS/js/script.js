@@ -1,49 +1,66 @@
-var arr = [];
+var arr2 = [10,3,1,2,4,6,2,3,4];
 
-var arr2 = [['world',2,3],1,2,3,4,5,6,7,8,9,10];
-
-/*var a = 'script';
-var arr3 = [1,2,3,4,5,a,7,8,[1,2,3],10];
-var arr4 = [a+10,a-5];*/
-
-/*var arr3 = new Array();
-var arr4 = new Array(5);
-var arr5 = new Array(1,2,3,4,5,6,7,'test',9,10);*/
-
-var i = 5;
-arr2[5] = 'hello';
-
-arr2[10] = 11;
-arr2[11] = 12;
-
-//arr2[100] = 100;
-
-/*arr2['hello'] = 'world';
-arr2['hello2'] = 'world';
-arr2['hello3'] = 'world';*/
-
-//alert(arr2);
-
-var k = Object.keys(arr2);
-
-/*for (var i = 0; i < arr2.length; i++) {
-	document.write(arr2[i] + '<br />');
+/*if (30 in arr2) {
+	alert('true');
 }
-arr2.length = 50
-alert(arr2[0][0]);
-for (var i = 0; i < k.length; i++) {
-	document.write(k[i] + '=>' + arr2[k[i]] + '<br />');
-}*/
-
-var table = new Array(10);
-for (var i = 0; i < table.length; i++) {
-    table[i] = new Array(10);
+else {
+	alert('FALSE');
 }
 
-for (var row = 0; row < table.length; row++) {
-    for (var col = 0; col < table[row].length; col++) {
-        table[row][col] = row*col;
-    }
+if (Array.isArray(arr2)) {
+	for (var i =0;;) {
+	}
 }
 
-alert(table[5][6]);
+alert(arr2.join('-'));
+
+arr2.reverse();
+arr2.sort(function(a, b) {
+	console.log(a + '|' + b);
+	return b - a;
+});*/
+
+//var arr_res = arr2.concat([10,56,89]);
+
+var arr_res = arr2.slice(-3);
+
+/*alert(arr2.splice(2,0,5,7,9,10));
+
+arr2.push([10,20,30])
+alert(arr2.pop());
+arr2.unshift([10,20,30]);
+arr2.shift();
+
+delete arr2[0];
+
+arr2.forEach(function(v,i,a) {
+    a[i] = v + 10 + 'hello';
+});
+
+var res = arr2.map(function(x,i,a) {
+	return x * x;
+});
+
+var res = arr2.filter(function(x, i, a) {
+	return x < 3
+});
+
+var res = arr2.some(function(x) {
+	return x < 5;
+});*/
+
+
+var res = arr2.reduce(function(x,y) {
+    return x + y;
+}, 0);
+
+/*reduceRight()
+indexOf()
+lastIndexOf*/
+
+alert(arr2.lastIndexOf(3));
+
+arr2['hello'] = 'world';
+for (var key in arr2) {
+    document.write(key + '=>' + arr2[key] + '<br />');
+}
