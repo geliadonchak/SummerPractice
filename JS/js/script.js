@@ -1,32 +1,41 @@
-function stringWork() {
-    var str = document.getElementById('head').innerHTML;
+console.log(Math.abs(-10));
+console.log(Math.acos(-1));
+console.log(Math.asin(45));
+console.log(Math.atan(30));
+console.log(Math.ceil(3.5));
+console.log(Math.cos(0));
+console.log(Math.E);
+console.log(Math.exp(2));
+console.log(Math.floor(-1.9));
+console.log(Math.LN10);
+console.log(Math.LN2);
+console.log(Math.log(10));
+console.log(Math.LOG10E);
+console.log(Math.LOG2E);
+console.log(Math.max(1, 5, 66, 4, 3));
+console.log(Math.min(2, 5, -4, 543, -43));
+console.log(Math.PI);
+console.log(Math.pow(4, 0.5));
+console.log(Math.floor(45.8));
+console.log(Math.random());
+console.log(Math.sin(180));
+console.log(Math.sqrt(25));
+console.log(Math.tan(90));
 
-    // var result = str;
-    // var result = new String(str);
-    // var result = str.charAt(10);
-    // var result = str[10];
-    // var result = str.charCodeAt(15);
-    // var result = str.concat('hello', '!!!');
-    // var result = String.fromCharCode(str.charCodeAt(15));
-    // var result = str.indexOf('JavaScript');
-    // var result = str.lastIndexOf('Script');
-    // var result = str.length;
-    // var result = str.localeCompare('A');
-    // var strings = ['hi', 'buy', 'my', 'tie'];
-    // var result = strings.sort;
-    // var result = str.match(/\+d/);
-    // var result = str.replace(/\+d/, 'Heeeello');
-    // var result = str.search(/\+d/);
-    // var result = str.slice(3, 7);
-    // var result = str.split('-');
-    // var result = str.substr(1, 6);
-    // var result = str.substring(1, 9);
-    // var result = str.toLowerCase();
-    // var result = str.toUpperCase();
+var result = NaN;
+result = isNaN(result);
+var result = Number(10);
 
-    document.getElementById('result').innerHTML = result;
-}
+var res = Number.MAX_VALUE;
+var res = Number.MIN_VALUE;
 
-window.onload = function () {
-    stringWork();
-}
+var res = Number.NEGATIVE_INFINITY;
+var res = Number.POSITIVE_INFINITY;
+
+var nemb = 10.5;
+var r = nemb.toFixed(10);
+var r = nemb.toPrecision(10);
+
+parseFloat('10.23hello world');
+parseFloat('Hi I-89 am');
+
